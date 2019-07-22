@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../styles/edit.css';
 import ReactFileReader from 'react-file-reader';
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+
 
 export default class Edit extends Component {
   
@@ -87,6 +87,7 @@ export default class Edit extends Component {
      
       return (
        <div className="center">
+          <a href="/" data-activates="mobile-demo" className="waves-effect show-on-large button-collapse toggle-menu left color">Back</a> 
            <form onSubmit={this.onSubmit} method="post" className="form_class">
         <ReactFileReader handleFiles={this.fileSelectedHandler} base64={true} multipleFiles={true}>
         <button type="button" className='btn'>choose Image</button>
@@ -96,10 +97,7 @@ export default class Edit extends Component {
          <textarea placeholder="description..." rows="20" value={this.state.description} onChange={this.onChangedescription} id="comment_text" cols="40" className="ui-autocomplete-input" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
         <div><button className="waves-effect waves-light btn-small" type="submit"><i className="material-icons left">cloud</i>update</button>  </div>  
         </form> 
-        <a href="/" data-activates="mobile-demo"
-                   className="waves-effect show-on-large button-collapse toggle-menu left color">
-                   Back
-                </a> 
+      
         </div>
       );
       }

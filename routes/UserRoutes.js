@@ -72,15 +72,15 @@ router.post('/register',(req, res) => {
         });
 });
 
-router.post('/login',auth,(req, res) => {
+router.post('/login',(req, res) => {
   if(!req.body.email) {
-    res.end({success: false, message:'Error:email must not be empty'})
+    res.send({success: false, message:'Error:email must not be empty'})
   }
-  if(!req.body.email) {
-    res.end({success: false, message:'Error:password must not be empty'})
+  if(!req.body.password) {
+    res.send({success: false, message:'Error:password must not be empty'})
   }
      BlogUser.findOne({
-        email: req.body.email.toLowerCase()
+        email: req.body.email
     })
     .then(user => {
         if(user) {
