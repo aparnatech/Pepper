@@ -13,7 +13,6 @@ export default class Edit extends Component {
     this.onChangetitle = this.onChangetitle.bind(this);
     this.onChangedescription = this.onChangedescription.bind(this);
     this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
-    this.redirect = this.redirect.bind(this);
     console.log('pppp',this.props);
     this.state = {
       id: this.props[0]._id,
@@ -84,14 +83,10 @@ export default class Edit extends Component {
       image: event.target.value
     })
   }
-  redirect(){
-    event.preventDefault(); 
-    <Redirect to='/'/>
-  }
     render() {
      
       return (
-       <div className="row col s8">
+       <div className="center">
            <form onSubmit={this.onSubmit} method="post" className="form_class">
         <ReactFileReader handleFiles={this.fileSelectedHandler} base64={true} multipleFiles={true}>
         <button type="button" className='btn'>choose Image</button>
@@ -99,15 +94,13 @@ export default class Edit extends Component {
         <input type="text" placeholder="title here..." value={this.state.title} onChange={this.onChangetitle} className="uploading_input"/> 
         <br/>
          <textarea placeholder="description..." rows="20" value={this.state.description} onChange={this.onChangedescription} id="comment_text" cols="40" className="ui-autocomplete-input" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-        <div><button className="waves-effect waves-light btn-small" type="submit"><i className="material-icons left">cloud</i>update</button></div>  
-        <div><button className="waves-effect waves-light btn-small" onclick={this.redirect}type="submit">Back</button></div>  
-        </form>  
+        <div><button className="waves-effect waves-light btn-small" type="submit"><i className="material-icons left">cloud</i>update</button>  </div>  
+        </form> 
+        <a href="/" data-activates="mobile-demo"
+                   className="waves-effect show-on-large button-collapse toggle-menu left color">
+                   Back
+                </a> 
         </div>
-      //   <div className="center">
-
-       
-      // </div>
-      
       );
       }
 }
