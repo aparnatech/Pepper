@@ -1,0 +1,16 @@
+.style {
+  text-align:center;
+}
+.padding_left{
+    padding-left: 11.250px; 
+}
+.margin_top {
+    margin-top: 50px;
+    text-align:center !important;
+}
+.button_style {
+        width: 150px;
+        border-radius: 3px;
+        letter-spacing: 1.5px;
+        margin-top: 1rem;
+}
