@@ -47,7 +47,7 @@ export default class Edit extends Component {
       title: event.target.value
     })
   }
-  onChangedescription = event => {
+  onChangedescription=event => {
     console.log('event', event.target.value);
     this.setState({
       description: event.target.value
@@ -67,13 +67,12 @@ export default class Edit extends Component {
     .then(res=> {
       const data = res.data
       console.log('data1212', data);
-      // this.setState({
-      //   id:data[0]._id,
-      //   image:data[0].image[0] ,
-      //   title: data[0].title,
-      //   description: data[0].description
-       
-      // })
+      this.setState({
+        id:'',
+        image:'' ,
+        title:'',
+        description: ''
+      })
     }).catch(error => { console.log('request failed', error); });
     
   }

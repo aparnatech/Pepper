@@ -49,7 +49,7 @@ export default class blogSite extends Component {
           datas: this.state.datas.filter(el=>el._id !== id)
         })
         alert('deleted');
-        <Redirect to= '/'/>
+        <Redirect to='/'/>
     }).catch(error => { console.log('request failed', error); });
   }
   iteratedata(d) {
